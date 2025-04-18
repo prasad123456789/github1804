@@ -1,0 +1,80 @@
+
+
+declare
+number1 number(10,2):=20;
+number2 number(10,2):=10;
+result number(10,2);
+begin
+result := (number1+number2);
+dbms_output.put_line('The addition of '||number1||' and '||number2||' are: '||result);
+end;
+
+set serveroutput on size 30000; ==this will print out put
+
+
+
+====================Basic procedure Day 3 NIC IT academy 
+declare
+v_prd_code number(10,2);
+v_prd_name varchar2(10);
+v_order_date DATE;
+begin
+select QUANTITY_ORDERED,SALE_PRICE,ORDER_DATE into v_prd_code,v_prd_name,v_order_date from sales where ORDERID='1';
+dbms_output.put_line('The Sale Price is: '||v_prd_name || ' and order id: '||v_prd_code || ' and order date is: '||v_order_date);
+end;
+
+
+
+
+===========================PL/SQL IF-ELSE
+
+declare
+v_prd_code number(10,2);
+v_prd_name varchar2(10);
+v_order_date DATE;
+begin
+select QUANTITY_ORDERED,SALE_PRICE,ORDER_DATE into v_prd_code,v_prd_name,v_order_date from sales where ORDERID='1';
+dbms_output.put_line('The Sale Price is: '||v_prd_name || ' and order id: '||v_prd_code || ' and order date is: '||v_order_date);
+end;
+
+desc products;
+select *from sales;
+DBMS_OUTPUT.ENABLE(500000);
+set serveroutput on size 30000;
+
+
+
+================================================IF-ELSE code examle
+
+declare
+a number:=30;
+b number:=20;
+begin
+
+if a>b then
+dbms_output.put_line(a||' is greate then '||b);
+else
+dbms_output.put_line(b||'is greate then'||a);
+end if;
+end;
+
+
+
+
+================================================================IF-ELSEIF-IF example
+
+declare
+a number:=30;
+b number:=50;
+c number:=70;
+begin
+if a>b and a>c then
+dbms_output.put_line(a||' is greate then  '|| b ||' and '||c);
+elsif b>a and b>c then
+dbms_output.put_line(b||' is greate then '|| a ||' and '||c);
+else
+dbms_output.put_line(c||' is greate then '|| a ||' and '||b);
+end if;
+end;
+
+OUT-PUT CHANGE:>>> dbms_output.put_line(' A is greate then B and C ');

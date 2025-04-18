@@ -1,0 +1,4 @@
+===>
+Script TO delete files which are older than 5 days.
+
+find /home/my_folder/ -type f -mtime +5 | xargs
